@@ -5,7 +5,7 @@
 }
 
 :root {
-  --size: 5rem;
+  --size: 6rem;
   --height: 10px;
 }
 
@@ -20,34 +20,63 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
-  /* justify-items: center; */
-  /* align-items: center; */
+  /* justify-items: flex-end;
+  align-items: flex-end; */
   grid-template-columns: repeat(3, auto);
-}
-
-.x-class {
-  background-color: red;
-  border: 5px solid black;
-  border-radius: 10%;
-  width: var(--size);
-  height: var(--size);
-  margin: 2px;
-}
-
-.o-class {
-  background-color: blue;
-  border: 5px solid black;
-  border-radius: 10%;
-  width: var(--size);
-  height: var(--size);
-  margin: 2px;
 }
 
 .cell {
   /* background-color: black; */
   border: 5px solid black;
   border-radius: 10%;
-  width: var(--size);
-  height: var(--size);
-  margin: 2px;
+  width: calc(var(--size) * 0.95);
+  height: calc(var(--size) * 0.95);
+  margin: calc(var(--size) * 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cell:hover {
+  background-color: paleturquoise;
+}
+
+.cell.x::before,
+.cell.x::after {
+  content: "";
+  width: calc(var(--size) * 0.15);
+  height: calc(var(--size) * 0.8);
+  background-color: black;
+  position: absolute;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
+
+.cell.x::after {
+  transform: rotate(45deg);
+}
+
+.cell.x::before {
+  transform: rotate(-45deg);
+}
+
+.cell.o::before {
+  content: "";
+  width: calc(var(--size) * 0.75);
+  height: calc(var(--size) * 0.75);
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+}
+
+.cell.o::after {
+  content: "";
+  width: calc(var(--size) * 0.55);
+  height: calc(var(--size) * 0.55);
+  border-radius: 100%;
+  background-color: white;
+  position: absolute;
 }
