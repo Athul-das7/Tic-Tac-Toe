@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --size: 5rem;
+  --height: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.board {
+  width: 100vw;
+  height: 100vh;
+  /* border: 10px solid green; */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  /* justify-items: center; */
+  /* align-items: center; */
+  grid-template-columns: repeat(3, auto);
+}
+
+.x-class {
+  background-color: red;
+  border: 5px solid black;
+  border-radius: 10%;
+  width: var(--size);
+  height: var(--size);
+  margin: 2px;
+}
+
+.o-class {
+  background-color: blue;
+  border: 5px solid black;
+  border-radius: 10%;
+  width: var(--size);
+  height: var(--size);
+  margin: 2px;
+}
+
+.cell {
+  /* background-color: black; */
+  border: 5px solid black;
+  border-radius: 10%;
+  width: var(--size);
+  height: var(--size);
+  margin: 2px;
+}
