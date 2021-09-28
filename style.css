@@ -41,7 +41,7 @@ body {
 
 .cell:hover {
   /* box-shadow: 10px 10px #888; */
-  background-color: bisque;
+  background-color: lightskyblue;
 }
 
 .cell.x,
@@ -86,4 +86,9 @@ body {
   border-radius: 100%;
   background-color: white;
   position: absolute;
+}
+
+.cell.o::after:hover {
+  background-color: lightskyblue;
+  color: skyblue;
 }
