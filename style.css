@@ -13,9 +13,31 @@ body {
   margin: 0;
 }
 
+p {
+  text-align: center;
+}
+
+#restart {
+  text-align: center;
+  border: 2px solid black;
+  width: 15%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#restart:hover {
+  color: white;
+  background-color: black;
+}
+
+#restart:active {
+  color: white;
+  background-color: rgb(75, 75, 75);
+}
+
 .board {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   /* border: 10px solid green; */
   display: grid;
   justify-content: center;

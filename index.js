@@ -1,6 +1,8 @@
 const x = "x",
   o = "o";
+const restart = document.getElementById("restart");
 let playerTurn = x;
+let win = document.getElementById("win");
 let cellElements = document.querySelectorAll("[datacell]");
 const wins = [
   [0, 1, 2],
@@ -21,10 +23,13 @@ function addClass(e) {
   let cell = e.target;
   cell.classList.add(playerTurn);
   if (wonGame(playerTurn)) {
-    console.log(playerTurn + " won");
+    winMessage(true);
+  } else if (draw()) {
+    winMessage(false);
+  } else {
+    if (playerTurn == x) playerTurn = o;
+    else playerTurn = x;
   }
-  if (playerTurn == x) playerTurn = o;
-  else playerTurn = x;
 }
 
 function wonGame(presentPlayer) {
@@ -32,5 +37,19 @@ function wonGame(presentPlayer) {
     return combination.every((index) => {
       return cellElements[index].classList.contains(presentPlayer);
     });
+  });
+}
+
+function winMessage(player) {
+  if (player) {
+    win.innerText = `Player ${playerTurn == "x" ? "X" : "O"} won`;
+  } else {
+    win.innerText = "Its a Draw";
+  }
+}
+
+function draw() {
+  return [...cellElements].every((cell) => {
+    return cell.classList.contains("x") || cell.classList.contains("o");
   });
 }
