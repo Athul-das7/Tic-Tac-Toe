@@ -46,6 +46,9 @@ function winMessage(player) {
   } else {
     win.innerText = "Its a Draw";
   }
+  setTimeout(() => {
+    location.reload();
+  }, 2000);
 }
 
 function draw() {
@@ -53,3 +56,7 @@ function draw() {
     return cell.classList.contains("x") || cell.classList.contains("o");
   });
 }
+
+restart.addEventListener("click", function () {
+  location.reload();
+});
