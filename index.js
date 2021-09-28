@@ -4,6 +4,7 @@ const restart = document.getElementById("restart");
 let playerTurn = x;
 let win = document.getElementById("win");
 let cellElements = document.querySelectorAll("[datacell]");
+console.log(cellElements);
 const wins = [
   [0, 1, 2],
   [3, 4, 5],
@@ -16,7 +17,7 @@ const wins = [
 ];
 
 cellElements.forEach((cell) => {
-  cell.addEventListener("click", addClass);
+  cell.addEventListener("click", addClass, { once: true });
 });
 
 function addClass(e) {
